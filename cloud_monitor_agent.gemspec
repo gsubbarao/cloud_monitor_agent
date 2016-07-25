@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'cloud_monitor_agent/version'
+require './lib/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "cloud_monitor_agent"
-  spec.version       = CloudMonitorAgent::VERSION
+  spec.version       = CloudMonitor::VERSION
   spec.authors       = ["G SubbaRao"]
   spec.email         = ["subbarao.kly@gmail.com"]
   spec.description   = %q{A Ruby Gem with methods to send statistics such as CPU, Disk, TCP/UDP Connections, Load, Bandwidth, Disk I/O, and Memory to remote address}
