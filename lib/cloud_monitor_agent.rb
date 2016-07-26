@@ -31,12 +31,13 @@ class CloudMonitorAgent
   def send_report 
     while true
       payload = self.getPayload 
-      uri = URI('http://localhost:9292/api/v1/push_info')
+      uri = URI(self.api_url)
       req = Net::HTTP::Post.new(uri, 'Content-Type' => 'application/json')
       req.body = payload.to_json
       res = Net::HTTP.start(uri.hostname, uri.port) do |http|
         http.request(req)
       end
+      p res
       sleep @intervel
     end
   end  
